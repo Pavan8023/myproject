@@ -1,0 +1,136 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+error_reporting(E_ALL & ~E_NOTICE); // Report all errors except notices
+ini_set('display_errors', 0); // Don't display errors to the user
+
+function customErrorHandler($errno, $errstr, $errfile, $errline) {
+    // Customize error message display
+    echo "";
+    // Log the error details for debugging
+    error_log("Error [$errno]: $errstr in $errfile on line $errline", 3, "/var/log/php_errors.log");
+    /* Don't execute PHP internal error handler */
+    return true;
+}
+
+set_error_handler("customErrorHandler");
+
+$servername='localhost';
+$username='id22303801_root';
+$password='Kle515###';
+$dbname='id22303801_addmission_form';
+
+$conn=new mysqli($servername,$username,$password,$dbname);
+
+if($conn->connect_error)
+{
+	die("Connection Fail");
+}
+@$name=$_POST['name'];
+@$clg=$_POST['college_name'];
+@$mo_no=$_POST['mobile_no'];
+@$gender=$_POST['gender'];
+@$city=$_POST['city'];
+@$email=$_POST['emails'];
+@$ages=$_POST['age'];
+@$date=$_POST['dates'];
+@$course=$_POST['course'];
+
+@$sql="INSERT INTO `info_data`(`name`, `college_name`, `mobile_no`, `gender`, `city`, `email`, `age`, `date`, `course`) VALUES ('$name','$clg','$mo_no','$gender','$city','$email','$ages','$date','$course')";
+
+if($conn->query($sql)==true)
+{
+	echo("New record added");
+}
+else
+{
+	echo("error");
+}
+$conn->close();
+?>
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Addmision Form</title>
+        <link rel="stylesheet" type- "text/css" href="style.css">
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <h1 style="color:white;background:black;" align="center">KLE BCA COLLEGE NIPANI</h1>
+        <div class="container">
+            <div class="form-container">
+                <div class="box">
+                    <form method="POST">
+                        <h2 style="color:yellow;border:white;" align="center">ADDMISSION FORM</h2>
+                        <div class="input-name">
+                            <i class="fa fa-sharp fa-solid fa-user lock"></i>
+                            <input type="text" name="name" class="name" placeholder="enter name" required>
+                            <span>
+    <i class="fa fa-solid fa-graduation-cap lock"></i>
+    <input type="text" name="college_name" class="name" placeholder="enter college name" required>
+</span>
+                        </div><br><br>
+                        <div class="input-name">
+                            <i class="fa fa-sharp fa-regular fa-mobile lock"></i>
+                            <input type="text" name="mobile_no" class="name" placeholder="enter mobile number" required>
+                            <span>
+    <i class="fa fa-solid fa-building lock"></i>
+    <input type="text" name="city" class="name" placeholder="enter city" required>
+</span>
+                        </div><br>
+                        <div class="text-name">
+                            <i class="fa fa-solid fa-venus lock"></i>
+                            <label class="label">Gender</label><br><br>
+                            <input type="radio" value="MALE" class="button" name="gender">
+                            <label>Male</label>
+                            <input type="radio" value="FEMALE" class="button" name="gender">
+                            <label>Female</label>
+                        </div><br><br>
+                        <div class="input-name">
+                            <label class="label">E-Mail</label><br>
+                            <i class="fa fa-solid fa-envelope lock"></i>
+                            <input type="email" name="emails" class="name" placeholder="enter E-Mail" required>
+                        </div><br><br>
+                        <div class="input-name">
+                            <label class="label">Date</label><br>
+                            <i class="fa fa-solid fa-calendar"></i>
+                            <input type="date" name="dates" class="name" placeholder="enter date" required>
+                        </div><br><br>
+                        <div class="input-name">
+                            <label class="label">Age</label><br>
+                            <i class="fa fa-solid fa-heart"></i>
+                            <input type="number" name="age" class="name" placeholder="enter age" required>
+                        </div><br><br>
+                        <div class="input-name">
+                            <label class="label">Course</label><br>
+                            <i class="fa fa-solid fa-graduation-cap"></i>
+                            <select name="course" class="name">
+    <option>BCA</option>
+    <option>BBA</option>
+    <option>B.COM</option>
+</select>
+                        </div><br><br>
+                        <div class="input-button" align="center">
+                            <button class="btn">submit
+</button>
+                            <span>
+<button class="btn">reset
+</button>
+</span>
+                            <a href="https://klebcaaddmisionformapplication.000webhostapp.com/login.php">log-out</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    </html>

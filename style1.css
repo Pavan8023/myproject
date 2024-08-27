@@ -1,0 +1,78 @@
+body {
+    background: url('sea-7423274_1920.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.sign-up {
+    width: 360px;
+    height: 280px;
+    margin: auto;
+    background: white;
+    border-radius: 3px;
+}
+
+.log-in {
+    width: 360px;
+    height: 280px;
+    margin: auto;
+    background: white;
+    border-radius: 3px;
+}
+
+h1 {
+    text-align: center;
+    padding: 15px;
+}
+
+form {
+    width: 300px;
+    margin: 20px;
+}
+
+form label {
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+form input {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid grey;
+    border-radius: 6px;
+    outline: none;
+}
+
+p {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50%;
+    margin-top: 50px;
+    border-radius: 20px;
+    box-shadow: inset -4px -4px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: auto;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+::placeholder {
+    color: white;
+    content-visibility: 0.7;
+}

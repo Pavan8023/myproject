@@ -1,0 +1,125 @@
+body {
+    background: url(' sea-7423274_1920.jpg') #f2f2f2 no-repeat center/cover;
+    font-size: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 700px;
+    padding: 20px;
+    height: 1000px;
+    margin: 50px auto 0;
+    border-top: solid blue;
+    box-shadow: 0 0 9px 5px rgba(0, 0.5, 0, 1);
+}
+
+.box {
+    width: 670px;
+    height: 925px;
+    padding: 60px;
+    margin: 50px auto 0;
+    background: url('clg.jpg');
+    background-size: cover;
+}
+
+.container h2 {
+    font-size: 24px;
+    line-height: 22px;
+    padding: 30px;
+    text-align: center;
+}
+
+input-name {
+    width: 90%;
+    position: relative;
+    margin: 20px auto;
+}
+
+input-button {
+    height: 20px;
+    width: 30px;
+    width: 90%;
+    position: relative;
+    margin: 20px auto;
+}
+
+.input-button span {
+    margin-left: 40px;
+}
+
+.btn {
+    border-radius: 50px;
+    border: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    padding: 0rem 0.5rem;
+}
+
+.btn {
+    background: black;
+    color: white;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+.btn:focus {
+    background: yellow;
+    color: orange;
+}
+
+.input-name i {
+    position: absolute;
+    font-size: 18px;
+    color: blue;
+    border-right: 1px solid #cccccc;
+}
+
+.input-name span {
+    margin-left: 35px;
+}
+
+.lock {
+    padding: 8px 11px;
+}
+
+.name {
+    width: 45%;
+    padding: 8px 0 0 40px;
+}
+
+.text-name,
+.name {
+    outline: none;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+}
+
+.text-name:hover,
+.name:hover {
+    background-color: grey;
+}
+
+.text-name:focus,
+.name:focus {
+    border: 1px solid blue;
+}
+
+.button {
+    margin-left: 8px;
+}
+
+.label {
+    color: white;
+    background-color: black;
+}
